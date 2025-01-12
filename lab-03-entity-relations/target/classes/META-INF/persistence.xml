@@ -13,12 +13,12 @@
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
-            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost/JPA_DB_03"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
 
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
 
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
