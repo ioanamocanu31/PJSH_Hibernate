@@ -1,15 +1,37 @@
 package edu.jpa.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.SecondaryTable;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Company")
+@SecondaryTable(
+        name = "CompanyDetail",
+        pkJoinColumns = {
+        @PrimaryKeyJoinColumn(
+                name = "Company_id",
+                referencedColumnName = "Company_id")
+        })
 public class Company {
-    private int id;
+    @Column(name="Company_id", table="Company")
+    @Id
+    private Integer id;
+
+    @Column(name="Company_name", table="Company")
     private String name;
+
+    @Column(name="CompanyDetail_address", table="CompanyDetail")
     private String address;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
